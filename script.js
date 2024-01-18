@@ -31,7 +31,18 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function() {
   // speler
-
+  if (keyIsDown(65)){
+  spelerX = spelerX-1;
+  }
+  if (keyIsDown(68)){
+    spelerX = spelerX+1;
+  }
+  if (keyIsDown(87)){
+    spelerY = spelerY-1;
+  }
+  if (keyIsDown(83)){
+    spelerY = spelerY+1;
+  }
   // vijand
 
   // kogel
@@ -56,7 +67,8 @@ var verwerkBotsing = function() {
  */
 var tekenAlles = function() {
   // achtergrond
-
+  fill(201,34,160);
+  rect(0,0,1280,720);
   // vijand
 
   // kogel
