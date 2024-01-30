@@ -68,7 +68,7 @@ var beweegAlles = function () {
     playerX = playerX - playerXSpeed;
     playerDirection = playerLeft;
   }
-  if (keyIsDown(39)) {
+  if  (keyIsDown(39)) {
     playerX = playerX + playerXSpeed;
     playerDirection = playerRight;
   }
@@ -90,6 +90,7 @@ var beweegAlles = function () {
   if (keyIsDown(38) && keyIsDown(37)){
     playerDirection = playerUpLeft;
   }
+  
   // sprong
   if (keyIsDown(67) && playerGrounded === true) {
     playerGrounded = false;
@@ -109,12 +110,44 @@ var beweegAlles = function () {
   if (isDashing === false && keyIsDown(88)) { //X
     isDashing = true;
   }
-  if (isDashing === true) {
-    dashY = dashY - 10;
-  }
-  if (isDashing === true && dashY < 0) {
+  if (isDashing === true){
+    playerXSpeed = 0;
+    if (playerDirection === 1){
+      playerX = playerX;
+      playerY = playerY-20;
+    }
+    if (playerDirection === 2){
+      playerX = playerX+14;
+      playerY = playerY-14;
+    }
+    if (playerDirection === 3){
+      playerX = playerX+20;
+      playerY = playerY;
+    }
+    if (playerDirection === 4){
+      playerX = playerX+14;
+      playerY = playerY+14;
+    }
+    if (playerDirection === 5){
+      playerX = playerX;
+      playerY = playerY+20;
+    }
+    if (playerDirection === 6){
+      playerX = playerX-14;
+      playerY = playerY+14;
+    }
+    if (playerDirection === 7){
+      playerX = playerX-20;
+      playerY = playerY;
+    }
+    if (playerDirection === 8){
+      playerX = playerX-14;
+      playerY = playerY-14;
+    }
     isDashing = false;
-  }
+    playerXSpeed =4;
+    jumpSpeed = 0;
+}
 };
 
 /**
